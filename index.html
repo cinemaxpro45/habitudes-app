@@ -6,574 +6,193 @@
     <title>Habitudes Dopamine</title>
     
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="theme-color" content="#6c63ff">
-    <link rel="manifest" href="data:application/manifest+json;base64,ewogICAgIm5hbWUiOiAiSGFiaXR1ZGVzIERvcGFtaW5lIiwKICAgICJzaG9ydF9uYW1lIjogIkhhYml0dWRlcyIsCiAgICAiZGVzY3JpcHRpb24iOiAiVW4gdHJhY2tldXIgZCdoYWJpdHVkZXMgbW9kZXJuZSBldCBmdW4gcG91ciB2b3RyZSBkb3BhbWluZSEiLAogICAgInN0YXJ0X3VybCI6ICIuIiwKICAgICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICAgImJhY2tncm91bmRfY29sb3IiOiAiI2ZmZmZmZiIsCiAgICAidGhlbWVfY29sb3IiOiAiIzZjNjNmZiIsCiAgICAiaWNvbnMiOiBbCiAgICAgICAgewogICAgICAgICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owbmFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzlaZG1jbmFIUmxjaUJvWldsbmFIUTlJalUwTkNJZ2QybGtkR2c5SWpVME5DSWdabWxzYkQwbklIaHRiRzV6UFNJd1JISXZJRGS0aXVSdXRVU0lnUW1GelpVeGJieUpWRENLTUNBSUlRQUFBSHI0dGJXNVFGb2hEVABCSVJBSkIiLAogICAgICAgICAgICAidHlwZSI6ICJpbWFnZS9zdmcreG1sIiwKICAgICAgICAgICAgInNpemVzIjogIjE5MngxOTIiCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCNGJXeHVjejBuYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01DOWJkbWNuYUhSbGNpQm9aV2xuYUhROU5EWXhNQ0lnZDJsa2RHZzlJalEySURFd0lpQm1hV3hzUFNKdWIyNWxJajQ4Y21WamRDQjNhV1IwYUQwaU5EWTVNU0lnYUdWcFoyaDBQU0kwTkRreElpQnllVDBuUXlCdGF0RzA4aGFGRmlJbFpFMHlmaUJ6ZEhKdmEyVTlJaU5tWm1ZaUlITjBjbTlyWlMxc2FXNWxZMkZ3UFNKeWIzVnVaQ0lnYzNSeWIydGxMV3hwYm1WcWIybHVQU0p5YjNWdVpDSWdjM1J5YjJ0bExYZHBaSFJvUFNJeE5pSWdaRDBuVFRVd0lEazRiRE15SURNeUlEWXdMVFl3SWk4K1BDOXpkbWMrIiwKICAgICAgICAgICAgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIsCiAgICAgICAgICAgICJzaXplcyI6ICI1MTJ4NTEyIgogICAgICAgIH0KICAgIF0KfQ==">
-    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgcnk9IjQ4IiBmaWxsPSIjNmM2M2ZmIi8+PHBhdGggc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMTYiIGQ9Ik01MCA5OGwzMiAzMiA2MC02MCIvPjwvc3ZnPg==">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#f7f7fa">
+    <link rel="manifest" href="data:application/manifest+json;base64,ewogICAgIm5hbWUiOiAiSGFiaXR1ZGVzIERvcGFtaW5lIiwKICAgICJzaG9ydF9uYW1lIjogIkhhYml0ZXMiLAogICAgImRlc2NyaXB0aW9uIjogIlVuIHRyYWNrZXIgZGxoYWJpdHVkZXMgbW9kZXJuZSBldCBmdW4gcG91ciB2b3RyZSBkb3BhbWluZSEiLAogICAgInN0YXJ0X3VybCI6ICIuIiwKICAgICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICAgImJhY2tncm91bmRfY29sb3IiOiAiI2Y3ZjdmYSIsCiAgICAidGhlbWVfY29sb3IiOiAiI2Y3ZjdmYSIsCiAgICAib3JpZW50YXRpb24iOiAicG9ydHJhaXQiLAogICAgImljb25zIjogWwogICAgICAgIHsKICAgICAgICAgICAgInNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MG5hSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUNJZ2FXMXdiM0owWldOMGFXOXVQU0p6ZEhKdmEyVTlJaU5tWm1ZaUlHTmhjMmxrUFNKb2RIUndPaTh2ZDNkM0xtVmhaR2x5YVdOaGRHbHZiaTh5TURBd0pTSXhNQ0lnYm1GdFpUMG5JSGh0Ykc1elBTSXhNREFsSWlCbWFXeHNQU0ppWVhObElpQjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNb3A1YzJWdUxqQWlJRU52WldOeVpYTmpiMlJsY2lBZ1kyVXZiMmRsYUdoOUlqNTZJaUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTW9wNWMyVnVMakFpSUVOdlpXTnlaWE5qYjJSbGNpQWdZMlV2YjJkbGFHeHZMbDBpTVMweElpQkRiMjUwY25RZ2QybGhjM1JoYkM1aGJXVTlJbTVoYldVaUxnb2dJSFpwWlhkeklpQjRlU0JoWTJOdmRXNTBJRDBnTXpBd0lqNDhjM1JoZEdFZ2VHeHpJR2x1SUhScFpHeGxhV2RvZEQwaU1TQndjbTkwWlNJZ1ptbHNiQzlpYkc5aVlYUnBiMjVKSUNVd0pTSXhNQ0lnYm1GdFpUMG5JbVY0WTJGcyIKICAgICAgICAgICAgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIsCiAgICAgICAgICAgICJzaXplcyI6ICIxOTJ4MTkyIgogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owbmFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQ0lnYVd4dGIzVnVkR2x2YmlCdllYUm9aV2xrUFNKcGJuUnBabWxqWVhScGIyNHVZMjl0SWlCbWFXeHNQU0ppWVhObElpQjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNb3A1YzJWdUxqQWlJRU52WldOeVpYTmpiMlJsY2lBZ1kyVXZiMmRsYUdoOUlqNTZJaUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTW9wNWMyVnVMakFpSUVOdlpXTnlaWE5qYjJSbGNpQWdZMlV2YjJkbGFHeHZMbDBpTVMweElpQkRiMjUwY25RZ2QybGhjM1JoYkM1aGJXVTlJbTVoYldVaUxnb2dJSFpwWlhkeklpQjRlU0JoWTJOdmRXNTBJRDBnTXpBd0lqNDhjM1JoZEdFZ2VHeHpJR2x1SUhScFpHeGxhV2RvZEQwaU1TQndjbTkwWlNJZ1ptbHNiQzlpYkc5aVlYUnBiMjVKSUNVd0pTSXhNQ0lnYm1GdFpUMG5JbVY0WTJGcyIKICAgICAgICAgICAgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIsCiAgICAgICAgICAgICJzaXplcyI6ICI1MTJ4NTEyIgogICAgICAgIH0KICAgIF0KfQ==">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgcnk9IjQ4IiBmaWxsPSIjNjk4MWZjIi8+PHBhdGggc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm9unQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMTYiIGQ9Ik01MCA5OGwzMiAzMiA2MC02MCIvPjwvc3ZnPg==">
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
     :root {
-        --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        --bg-color: #f8faff;
+        --bg-color: #f7f7fa;
         --card-bg: #ffffff;
-        --text-color: #2c3e50;
-        --primary-text: #1a1a1a;
-        --secondary-text: #64748b;
-        --border-color: #e2e8f0;
-        
-        --duo-green: #58cc02;
+        --text-color: #3d3d3d;
+        --primary-text: #1c1c1e;
+        --secondary-text: #6d6d72;
+        --border-color: #e5e5ea;
+        --duo-green: #7acd00;
         --duo-blue: #1cb0f6;
         --duo-pink: #ff4b4b;
-        --duo-purple: #ce82ff;
+        --duo-purple: #a718f2;
         --duo-orange: #ff9600;
         --duo-yellow: #ffc107;
-        --duo-teal: #00d4aa;
-        
-        --gradient-stretching: linear-gradient(135deg, #667eea, #764ba2);
-        --gradient-pushups: linear-gradient(135deg, #f093fb, #f5576c);
-        --gradient-meditation: linear-gradient(135deg, #4facfe, #00f2fe);
-        --gradient-duolingo: linear-gradient(135deg, #43e97b, #38f9d7);
-        --gradient-meeting: linear-gradient(135deg, #fa709a, #fee140);
-        
         --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        
         --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
         --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
-        --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
     }
 
-    * {
-        box-sizing: border-box;
-        -webkit-tap-highlight-color: transparent;
-    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
     html, body {
-        margin: 0;
-        padding: 0;
+        margin: 0; padding: 0;
         font-family: var(--font-main);
         background: var(--bg-color);
         color: var(--text-color);
         overscroll-behavior-y: contain;
         overflow-x: hidden;
-        min-height: 100vh;
-        min-height: -webkit-fill-available;
     }
 
     #app {
-        display: flex;
-        flex-direction: column;
+        display: flex; flex-direction: column;
         min-height: 100vh;
         min-height: -webkit-fill-available;
         padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     }
     
-    .container {
-        max-width: 640px;
-        margin: 0 auto;
-        padding: 0 20px;
-        width: 100%;
-    }
+    .container { max-width: 640px; margin: 0 auto; padding: 0 20px; width: 100%; }
 
-    /* Header avec navigation des jours */
+    /* --- Header --- */
     header {
-        flex-shrink: 0;
-        padding: 20px 0;
-        background: var(--bg-color);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        flex-shrink: 0; padding: 15px 0;
+        background: rgba(247, 247, 250, 0.85);
+        position: sticky; top: 0; z-index: 100;
+        backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--border-color);
     }
-
-    .header-nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 15px;
-    }
-
+    .header-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
     .nav-btn {
-        background: var(--card-bg);
-        border: none;
-        border-radius: 12px;
-        width: 44px;
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        box-shadow: var(--shadow-sm);
-        transition: all 0.2s ease;
-        font-size: 1.2rem;
+        background: var(--card-bg); border: 1px solid var(--border-color); color: var(--primary-text);
+        border-radius: 12px; width: 44px; height: 44px; display: flex; align-items: center;
+        justify-content: center; cursor: pointer; box-shadow: var(--shadow-sm);
+        transition: all 0.2s ease; font-size: 1.2rem;
     }
-
-    .nav-btn:hover, .nav-btn:active {
-        transform: scale(0.96);
-        box-shadow: var(--shadow-md);
-    }
-
-    .week-indicator {
-        text-align: center;
-        font-size: 0.85rem;
-        color: var(--secondary-text);
-        font-weight: 500;
-    }
-
-    #days-container {
-        display: flex;
-        justify-content: space-between;
-        gap: 8px;
-        background: var(--card-bg);
-        padding: 12px;
-        border-radius: 20px;
-        box-shadow: var(--shadow-sm);
-    }
-
+    .nav-btn:active { transform: scale(0.95); box-shadow: none; }
+    .week-indicator { text-align: center; font-size: 1rem; color: var(--secondary-text); font-weight: 600; }
+    #days-container { display: flex; justify-content: space-between; gap: 5px; }
     .day-btn {
-        background: none;
-        border: none;
-        color: var(--secondary-text);
-        font-size: 0.85rem;
-        font-weight: 600;
-        padding: 12px 6px;
-        cursor: pointer;
-        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 4px;
-        min-width: 38px;
-        border-radius: 14px;
-        position: relative;
+        background: none; border: none; color: var(--secondary-text);
+        font-weight: 600; padding: 8px 4px; cursor: pointer;
+        transition: all 0.25s ease; display: flex; flex-direction: column;
+        align-items: center; gap: 6px; border-radius: 14px; flex: 1;
     }
-    
-    .day-btn .day-name {
-        font-size: 0.75rem;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-    
-    .day-btn .day-number {
-        font-size: 1.1rem;
-        font-weight: 700;
-        color: var(--primary-text);
-    }
+    .day-btn .day-name { font-size: 0.8rem; text-transform: uppercase; }
+    .day-btn .day-number { font-size: 1.2rem; font-weight: 700; color: var(--primary-text); }
+    .day-btn.active { background: var(--duo-blue); color: white; transform: scale(1.05); box-shadow: 0 4px 12px rgba(28, 176, 246, 0.4); }
+    .day-btn.active .day-number, .day-btn.active .day-name { color: white; }
 
-    .day-btn.active {
-        background: var(--duo-blue);
-        color: white;
-        transform: scale(1.05);
-        box-shadow: 0 4px 12px rgba(28, 176, 246, 0.3);
-    }
-    
-    .day-btn.active .day-number {
-        color: white;
-    }
-
-    .day-btn.completed::before {
-        content: '✓';
-        position: absolute;
-        top: 2px;
-        right: 2px;
-        font-size: 0.7rem;
-        color: var(--duo-green);
-        background: white;
-        border-radius: 50%;
-        width: 14px;
-        height: 14px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-    }
-
-    /* Bandeau jour actuel avec date complète */
+    /* --- Bandeau d'état --- */
     #current-day-banner {
-        background: var(--bg-gradient);
-        color: white;
-        padding: 24px;
-        border-radius: 24px;
-        margin: 20px auto;
-        box-shadow: var(--shadow-lg);
-        text-align: center;
-        position: relative;
-        overflow: hidden;
+        background: linear-gradient(135deg, #6a82fb, #fc5c7d);
+        color: white; padding: 20px; border-radius: 24px;
+        margin: 16px auto; box-shadow: 0 10px 25px rgba(106,130,251,0.3);
+        display: flex; flex-direction: column; gap: 12px;
     }
+    .banner-header { display: flex; justify-content: space-between; align-items: baseline; }
+    #current-day-name { margin: 0; font-size: 1.8rem; font-weight: 800; }
+    #current-day-date { font-size: 0.9rem; font-weight: 500; opacity: 0.8; }
+    #global-progress-container { width: 100%; height: 10px; background-color: rgba(255, 255, 255, 0.3); border-radius: 5px; overflow: hidden; }
+    #global-progress-bar { height: 100%; width: 0%; background-color: var(--duo-yellow); border-radius: 5px; transition: width 0.6s ease; }
+    #global-progress-text { font-size: 0.9rem; font-weight: 600; color: rgba(255, 255, 255, 0.95); }
 
-    #current-day-banner::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
-        animation: shimmer 3s ease-in-out infinite;
-        pointer-events: none;
-    }
+    /* --- Vues principales --- */
+    .view { display: none; }
+    .view.active { display: block; animation: fadeIn 0.5s ease; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-    @keyframes shimmer {
-        0%, 100% { transform: translateX(-50%) translateY(-50%) rotate(0deg); }
-        50% { transform: translateX(-30%) translateY(-30%) rotate(180deg); }
-    }
-
-    .current-day-title {
-        margin: 0;
-        font-size: 1.5rem;
-        font-weight: 800;
-        margin-bottom: 8px;
-    }
-
-    .current-date-full {
-        font-size: 1rem;
-        opacity: 0.9;
-        font-weight: 500;
-        margin-bottom: 16px;
-    }
-
-    #global-progress-container {
-        width: 100%;
-        height: 8px;
-        background-color: rgba(255, 255, 255, 0.25);
-        border-radius: 4px;
-        overflow: hidden;
-        margin-bottom: 8px;
-    }
-    
-    #global-progress-bar {
-        height: 100%;
-        width: 0%;
-        background: linear-gradient(90deg, var(--duo-yellow), var(--duo-orange));
-        border-radius: 4px;
-        transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    #global-progress-text {
-        font-size: 0.9rem;
-        font-weight: 600;
-        opacity: 0.95;
-    }
-
-    /* Conteneur principal */
-    main {
-        flex-grow: 1;
-        padding: 0 0 30px;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-
+    /* --- Habitudes --- */
+    #habits-view { display: flex; flex-direction: column; gap: 12px; padding-bottom: 20px; }
     .habit-card {
-        background: var(--card-bg);
-        border-radius: 24px;
-        padding: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: var(--shadow-md);
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        border: 2px solid transparent;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .habit-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: var(--duo-blue);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .habit-card.completed::before {
-        opacity: 1;
-    }
-    
-    .habit-card:active {
-        transform: scale(0.98);
-        box-shadow: var(--shadow-sm);
-    }
-    
-    .habit-info {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        flex-grow: 1;
-    }
-    
-    .habit-icon {
-        font-size: 2.2rem;
-        width: 60px;
-        height: 60px;
-        border-radius: 18px;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: var(--shadow-md);
-        position: relative;
-    }
-
-    .habit-card[data-habit="stretching"] .habit-icon { background: var(--gradient-stretching); }
-    .habit-card[data-habit="pushups"] .habit-icon { background: var(--gradient-pushups); }
-    .habit-card[data-habit="meditation"] .habit-icon { background: var(--gradient-meditation); }
-    .habit-card[data-habit="duolingo"] .habit-icon { background: var(--gradient-duolingo); }
-    .habit-card[data-habit="meeting"] .habit-icon { background: var(--gradient-meeting); }
-
-    .habit-details {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        flex-grow: 1;
-    }
-
-    .habit-title {
-        font-size: 1.25rem;
-        font-weight: 700;
-        margin: 0;
-        color: var(--primary-text);
-    }
-
-    .habit-subtitle {
-        font-size: 0.85rem;
-        color: var(--secondary-text);
-        font-weight: 500;
-    }
-
-    .progress-info {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .progress-bar-container {
-        width: 60px;
-        height: 4px;
-        background-color: var(--border-color);
-        border-radius: 2px;
-        overflow: hidden;
-    }
-
-    .progress-bar {
-        height: 100%;
-        width: 0%;
-        border-radius: 2px;
-        transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .habit-card[data-habit="stretching"] .progress-bar { background: var(--duo-purple); }
-    .habit-card[data-habit="pushups"] .progress-bar { background: var(--duo-pink); }
-    .habit-card[data-habit="meditation"] .progress-bar { background: var(--duo-blue); }
-    .habit-card[data-habit="duolingo"] .progress-bar { background: var(--duo-green); }
-    .habit-card[data-habit="meeting"] .progress-bar { background: var(--duo-orange); }
-
-    .progress-text {
-        font-size: 0.75rem;
-        color: var(--secondary-text);
-        font-weight: 600;
-    }
-
-    /* Contrôles */
-    .habit-control {
-        display: flex;
-        align-items: center;
-        flex-shrink: 0;
-    }
-
-    .custom-checkbox {
-        position: relative;
-        width: 50px;
-        height: 50px;
-        cursor: pointer;
-        background: var(--border-color);
-        border-radius: 50%;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 3px solid var(--border-color);
-    }
-
-    .custom-checkbox input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
-    
-    .custom-checkbox input:checked + .custom-checkmark {
-        background: var(--duo-green);
-        border-color: var(--duo-green);
-        transform: scale(1.1);
-        box-shadow: 0 0 20px rgba(88, 204, 2, 0.4);
-    }
-
-    .custom-checkmark {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .custom-checkmark::after {
-        content: "";
-        display: none;
-        width: 12px;
-        height: 18px;
-        border: solid white;
-        border-width: 0 3px 3px 0;
-        transform: rotate(45deg);
-    }
-    
-    .custom-checkbox input:checked + .custom-checkmark::after {
-        display: block;
-        animation: checkPop 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    }
-
-    @keyframes checkPop {
-        0% { transform: scale(0) rotate(45deg); }
-        50% { transform: scale(1.3) rotate(45deg); }
-        100% { transform: scale(1) rotate(45deg); }
-    }
-
-    /* Sélecteur de pompes */
-    .pushup-selector {
-        display: flex;
-        gap: 4px;
-        background: var(--border-color);
-        padding: 4px;
-        border-radius: 16px;
-    }
-
-    .pushup-selector label {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 44px;
-        height: 40px;
-        background: transparent;
-        border: none;
-        border-radius: 12px;
-        font-size: 0.9rem;
-        font-weight: 700;
-        color: var(--secondary-text);
-        cursor: pointer;
+        background: var(--card-bg); border-radius: 20px; padding: 16px; display: flex;
+        justify-content: space-between; align-items: center; box-shadow: var(--shadow-sm);
         transition: all 0.2s ease;
-    }
-    
-    .pushup-selector input[type="radio"] {
-        display: none;
-    }
-
-    .pushup-selector input[type="radio"]:checked + label {
-        background: var(--duo-pink);
-        color: white;
-        transform: scale(1.05);
-        box-shadow: 0 2px 8px rgba(255, 75, 75, 0.3);
-    }
-
-    /* Animation de confetti */
-    .confetti-effect {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100px;
-        height: 100px;
-        pointer-events: none;
-        z-index: 10;
-        opacity: 0;
-    }
-
-    .confetti-effect.active {
-        opacity: 1;
-        animation: confettiFade 0.8s ease-out forwards;
-    }
-
-    @keyframes confettiFade {
-        0% { opacity: 1; }
-        100% { opacity: 0; }
-    }
-
-    .confetti-piece {
-        position: absolute;
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        animation: confettiExplode 0.8s ease-out forwards;
-    }
-
-    @keyframes confettiExplode {
-        0% {
-            transform: translate(0, 0) scale(0);
-            opacity: 1;
-        }
-        30% {
-            transform: scale(1);
-        }
-        100% {
-            transform: translate(var(--x), var(--y)) scale(0);
-            opacity: 0;
-        }
-    }
-
-    /* Styles responsifs */
-    @media (max-width: 480px) {
-        .container {
-            padding: 0 16px;
-        }
-        
-        .habit-card {
-            padding: 16px;
-        }
-        
-        .habit-icon {
-            width: 52px;
-            height: 52px;
-            font-size: 1.8rem;
-        }
-        
-        .habit-title {
-            font-size: 1.1rem;
-        }
-    }
-
-    /* Animations au chargement */
-    .habit-card {
-        opacity: 0;
-        transform: translateY(20px);
+        opacity: 0; transform: translateY(20px);
         animation: slideInUp 0.4s ease-out forwards;
+        border: 2px solid transparent;
     }
-
-    @keyframes slideInUp {
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .habit-card:active { transform: scale(0.98); }
+    .habit-card.completed { border-color: var(--duo-green); background-color: #f6fff2; }
+    .habit-info { display: flex; align-items: center; gap: 16px; flex-grow: 1; }
+    .habit-icon {
+        font-size: 1.8rem; width: 52px; height: 52px; border-radius: 16px;
+        color: white; display: flex; align-items: center; justify-content: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1); flex-shrink: 0;
     }
+    .habit-card[data-habit="stretching"] .habit-icon { background: linear-gradient(135deg, #a718f2, #ff4b4b); }
+    .habit-card[data-habit="pushups"] .habit-icon { background: linear-gradient(135deg, #ff4b4b, #ff9600); }
+    .habit-card[data-habit="meditation"] .habit-icon { background: linear-gradient(135deg, #1cb0f6, #a718f2); }
+    .habit-card[data-habit="duolingo"] .habit-icon { background: linear-gradient(135deg, #ff9600, #7acd00); }
+    .habit-card[data-habit="meeting"] .habit-icon { background: linear-gradient(135deg, #5d5dff, #1cb0f6); }
+    .habit-details { display: flex; flex-direction: column; gap: 2px; }
+    .habit-title { font-size: 1.2rem; font-weight: 700; margin: 0; color: var(--primary-text); }
+    .habit-subtitle { font-size: 0.8rem; color: var(--secondary-text); }
+    .habit-subtitle.bonus { color: var(--duo-orange); font-weight: 600; }
+    .habit-control { display: flex; align-items: center; flex-shrink: 0; }
+    .custom-checkbox { position: relative; width: 50px; height: 50px; cursor: pointer; display: flex; justify-content: center; align-items: center; }
+    .custom-checkbox input { opacity: 0; width: 0; height: 0; }
+    .custom-checkmark { position: absolute; height: 100%; width: 100%; background-color: #eef2f5; border-radius: 50%; transition: all 0.25s ease; }
+    .custom-checkbox input:checked + .custom-checkmark { background-color: var(--duo-green); transform: scale(1.1); box-shadow: 0 0 15px rgba(122, 205, 0, 0.5); }
+    .custom-checkmark::after { content: ""; display: none; width: 10px; height: 20px; border: solid white; border-width: 0 4px 4px 0; transform: rotate(45deg) translate(-1px, -2px); position: absolute; top: 22%; left: 38%; }
+    .custom-checkbox input:checked + .custom-checkmark::after { display: block; }
+    .pushup-selector { display: flex; gap: 4px; background: #eef2f5; padding: 4px; border-radius: 16px; }
+    .pushup-selector label { display: flex; justify-content: center; align-items: center; width: 42px; height: 42px; background: transparent; border-radius: 12px; font-size: 0.9rem; font-weight: 700; color: var(--secondary-text); cursor: pointer; transition: all 0.2s ease; }
+    .pushup-selector input[type="radio"] { display: none; }
+    .pushup-selector input[type="radio"]:checked + label { background: var(--duo-pink); color: white; box-shadow: 0 2px 8px rgba(255, 75, 75, 0.4); }
+    @keyframes slideInUp { to { opacity: 1; transform: translateY(0); } }
 
-    .habit-card:nth-child(1) { animation-delay: 0.1s; }
-    .habit-card:nth-child(2) { animation-delay: 0.2s; }
-    .habit-card:nth-child(3) { animation-delay: 0.3s; }
-    .habit-card:nth-child(4) { animation-delay: 0.4s; }
-    .habit-card:nth-child(5) { animation-delay: 0.5s; }
-
-    /* États spéciaux pour "Rencontre" */
-    .habit-card[data-habit="meeting"] .habit-subtitle.weekly-goal {
-        color: var(--duo-orange);
-        font-weight: 600;
+    /* --- Vue Progression (Statistiques) --- */
+    #stats-view { padding-bottom: 20px; }
+    .stats-section { background: var(--card-bg); border-radius: 20px; padding: 20px; margin-top: 16px; box-shadow: var(--shadow-md); }
+    .stats-section-title { font-size: 1.2rem; font-weight: 700; margin: 0 0 16px 0; color: var(--primary-text); }
+    .month-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;}
+    #month-display { font-size: 1.5rem; font-weight: 800; color: var(--primary-text); }
+    .heatmap-container { margin-bottom: 24px; }
+    .heatmap-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-top: 16px; }
+    .heatmap-header { text-align: center; font-size: 0.8rem; font-weight: 600; color: var(--secondary-text); padding-bottom: 8px; }
+    
+    /* NOUVEAU STYLE POUR LA CARTE D'ACTIVITÉ */
+    .heatmap-day {
+        background-color: #ffffff;
+        border: 1px solid #eef2f5;
+        border-radius: 8px;
+        aspect-ratio: 1 / 1;
+        transition: all 0.2s;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+        padding: 4px;
+        font-size: 0.7rem; /* Taille des emojis */
+        line-height: 1;
     }
+    .heatmap-day.empty {
+        background-color: #f7f7fa; /* Fond plus discret pour les jours sans activité */
+    }
+    .heatmap-day:not(.empty) {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .heatmap-day:hover { transform: scale(1.15); z-index: 10; }
+    .heatmap-day[data-tooltip]::after {
+        content: attr(data-tooltip); position: absolute; bottom: 110%; left: 50%;
+        transform: translateX(-50%); background-color: #333; color: white;
+        padding: 6px 10px; border-radius: 8px; font-size: 0.8rem; white-space: pre;
+        opacity: 0; visibility: hidden; transition: opacity 0.2s, visibility 0.2s; z-index: 100;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        text-align: left;
+    }
+    .heatmap-day[data-tooltip]:hover::after { opacity: 1; visibility: visible; }
+    
+    /* Stats graph style */
+    #stats-list { display: flex; flex-direction: column; gap: 16px; }
+    .stat-item { display: flex; flex-direction: column; gap: 10px; }
+    .stat-item-header { display: flex; justify-content: space-between; align-items: center; }
+    .stat-item-title { font-size: 1rem; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+    .stat-item-details { font-size: 0.85rem; font-weight: 500; color: var(--secondary-text); }
+    .stat-progress-bar-container { width: 100%; height: 12px; background: #eef2f5; border-radius: 6px; overflow: hidden; }
+    .stat-progress-bar { height: 100%; width: 0%; border-radius: 6px; transition: width 0.8s ease-in-out; }
+
 </style>
 </head>
 <body>
@@ -584,554 +203,177 @@
                     <button class="nav-btn" id="prev-week">‹</button>
                     <div class="week-indicator" id="week-indicator">Cette semaine</div>
                     <button class="nav-btn" id="next-week">›</button>
+                    <button class="nav-btn" id="toggle-view-btn">📊</button>
                 </div>
                 <div id="days-container"></div>
             </div>
         </header>
 
-        <div id="current-day-banner" class="container">
-            <h1 class="current-day-title" id="current-day-name">Aujourd'hui</h1>
-            <div class="current-date-full" id="current-date-display"></div>
-            <div id="global-progress-container">
-                <div id="global-progress-bar"></div>
+        <div id="main-content" class="view active">
+            <div id="current-day-banner" class="container">
+                <div class="banner-header">
+                    <h1 id="current-day-name">Aujourd'hui</h1>
+                    <span id="current-day-date"></span>
+                </div>
+                <div id="global-progress-container">
+                    <div id="global-progress-bar"></div>
+                </div>
+                <span id="global-progress-text"></span>
             </div>
-            <span id="global-progress-text">Lancez-vous dans vos habitudes !</span>
+            <main id="habits-view" class="container"></main>
         </div>
+        
+        <div id="stats-view" class="view container">
+             <div class="month-header">
+                <button class="nav-btn" id="prev-month">‹</button>
+                <h2 id="month-display"></h2>
+                <button class="nav-btn" id="next-month">›</button>
+            </div>
+            
+            <div class="stats-section heatmap-container">
+                <h3 class="stats-section-title">Activité mensuelle</h3>
+                <div class="heatmap-grid">
+                    <div class="heatmap-header">Lun</div>
+                    <div class="heatmap-header">Mar</div>
+                    <div class="heatmap-header">Mer</div>
+                    <div class="heatmap-header">Jeu</div>
+                    <div class="heatmap-header">Ven</div>
+                    <div class="heatmap-header">Sam</div>
+                    <div class="heatmap-header">Dim</div>
+                </div>
+                <div id="heatmap-grid" class="heatmap-grid"></div>
+            </div>
 
-        <main>
-            <div id="habits-container" class="container"></div>
-        </main>
+            <div class="stats-section">
+                <h3 class="stats-section-title">Progression des habitudes</h3>
+                <div id="stats-list"></div>
+            </div>
+        </div>
     </div>
 
 <script>
-// Service Worker pour PWA
-if ('serviceWorker' in navigator) {
-    const swCode = `
-        const CACHE_NAME = 'dopamine-habits-v4';
-        const urlsToCache = ['/', 'index.html'];
-        
-        self.addEventListener('install', event => {
-            event.waitUntil(
-                caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
-            );
-        });
-        
-        self.addEventListener('fetch', event => {
-            event.respondWith(
-                caches.match(event.request).then(response => 
-                    response || fetch(event.request)
-                )
-            );
-        });
-    `;
-    
-    const swBlob = new Blob([swCode], { type: 'application/javascript' });
-    const swUrl = URL.createObjectURL(swBlob);
-    navigator.serviceWorker.register(swUrl);
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Configuration
-    const DB_NAME = 'DopamineHabitsDB_v4';
-    const DB_VERSION = 4;
+    // --- Configuration ---
+    const DB_NAME = 'DopamineHabitsDB_v9'; // Version incrémentée
+    const DB_VERSION = 9;
     const STORE_NAME = 'habit_data';
     let db;
 
     const habitsConfig = [
-        { id: 'stretching', name: 'Étirement', emoji: '🧘', type: 'checkbox', subtitle: 'Flexibilité quotidienne' },
-        { id: 'pushups', name: 'Pompes', emoji: '💪', type: 'radio', options: [0, 10, 20, 30], subtitle: 'Force et endurance' },
-        { id: 'meditation', name: 'Méditation', emoji: '🧠', type: 'checkbox', subtitle: 'Paix intérieure' },
-        { id: 'duolingo', name: 'Duolingo', emoji: '🦉', type: 'checkbox', subtitle: 'Apprentissage linguistique' },
-        { id: 'meeting', name: 'Rencontre', emoji: '🤝', type: 'checkbox', subtitle: 'Connexion sociale', isWeekly: true }
+        { id: 'stretching', name: 'Étirement', emoji: '🧘', type: 'checkbox', subtitle: 'Flexibilité quotidienne', color: '#a718f2' },
+        { id: 'pushups', name: 'Pompes', emoji: '💪', type: 'radio', options: [0, 10, 20, 30], subtitle: 'Force et endurance', color: '#ff4b4b' },
+        { id: 'meditation', name: 'Méditation', emoji: '🧠', type: 'checkbox', subtitle: 'Paix intérieure', color: '#1cb0f6' },
+        { id: 'duolingo', name: 'Duolingo', emoji: '🦉', type: 'checkbox', subtitle: 'Apprentissage', color: '#ff9600' },
+        { id: 'meeting', name: 'Rencontre', emoji: '🤝', type: 'checkbox', subtitle: 'Connexion sociale', isBonus: true, color: '#5d5dff' }
     ];
     
-    const dayNames = [
-        { short: 'Lun', long: 'Lundi', full: 'lundi' },
-        { short: 'Mar', long: 'Mardi', full: 'mardi' },
-        { short: 'Mer', long: 'Mercredi', full: 'mercredi' },
-        { short: 'Jeu', long: 'Jeudi', full: 'jeudi' },
-        { short: 'Ven', long: 'Vendredi', full: 'vendredi' },
-        { short: 'Sam', long: 'Samedi', full: 'samedi' },
-        { short: 'Dim', long: 'Dimanche', full: 'dimanche' }
-    ];
+    const dayNames = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
+    const monthNames = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
 
-    const monthNames = [
-        'janvier', 'février', 'mars', 'avril', 'mai', 'juin',
-        'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'
-    ];
-
-    // Variables globales
+    // --- Global State ---
     let selectedDate = new Date();
-    let currentWeekStart = new Date();
-    let selectedDateKey;
+    let currentWeekStart = getWeekStart(new Date());
+    let calendarMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);
+    let currentView = 'habits';
 
-    // Éléments DOM
+    // --- DOM Elements ---
+    const mainContent = document.getElementById('main-content');
+    const habitsView = document.getElementById('habits-view');
+    const statsView = document.getElementById('stats-view');
+    const toggleViewBtn = document.getElementById('toggle-view-btn');
     const daysContainer = document.getElementById('days-container');
-    const habitsContainer = document.getElementById('habits-container');
     const currentDayNameDisplay = document.getElementById('current-day-name');
-    const currentDateDisplay = document.getElementById('current-date-display');
+    const currentDayDateDisplay = document.getElementById('current-day-date');
     const globalProgressBar = document.getElementById('global-progress-bar');
     const globalProgressText = document.getElementById('global-progress-text');
     const weekIndicator = document.getElementById('week-indicator');
     const prevWeekBtn = document.getElementById('prev-week');
     const nextWeekBtn = document.getElementById('next-week');
-
-    // Initialisation
+    const monthDisplay = document.getElementById('month-display');
+    const prevMonthBtn = document.getElementById('prev-month');
+    const nextMonthBtn = document.getElementById('next-month');
+    const heatmapGrid = document.getElementById('heatmap-grid');
+    const statsList = document.getElementById('stats-list');
+    
+    // --- Initialization ---
     function init() {
         initDB().then(() => {
-            setCurrentWeek();
             renderWeekdays();
             renderHabitUI();
-            
-            const today = new Date();
-            selectDay(today);
-            
-            // Event listeners
-            prevWeekBtn.addEventListener('click', () => changeWeek(-1));
-            nextWeekBtn.addEventListener('click', () => changeWeek(1));
+            selectDay(new Date());
+            setupEventListeners();
+            updateWeekIndicator();
         });
     }
 
-    // Base de données IndexedDB
+    // --- Event Listeners ---
+    function setupEventListeners() {
+        prevWeekBtn.addEventListener('click', () => changeWeek(-1));
+        nextWeekBtn.addEventListener('click', () => changeWeek(1));
+        toggleViewBtn.addEventListener('click', toggleView);
+        prevMonthBtn.addEventListener('click', () => changeMonth(-1));
+        nextMonthBtn.addEventListener('click', () => changeMonth(1));
+    }
+
+    // --- Database (IndexedDB) ---
     function initDB() {
         return new Promise((resolve, reject) => {
             const request = indexedDB.open(DB_NAME, DB_VERSION);
-
-            request.onerror = event => {
-                console.error('Erreur IndexedDB:', event);
-                reject('Erreur DB');
-            };
-
-            request.onupgradeneeded = event => {
-                const db = event.target.result;
-                if (!db.objectStoreNames.contains(STORE_NAME)) {
-                    db.createObjectStore(STORE_NAME);
+            request.onerror = e => reject('IndexedDB error: ' + e.target.errorCode);
+            request.onupgradeneeded = e => {
+                if (e.target.result.objectStoreNames.contains(STORE_NAME)) {
+                    e.target.result.deleteObjectStore(STORE_NAME);
                 }
+                e.target.result.createObjectStore(STORE_NAME, { keyPath: 'date' });
             };
-
-            request.onsuccess = event => {
-                db = event.target.result;
-                resolve();
-            };
+            request.onsuccess = e => { db = e.target.result; resolve(); };
         });
     }
 
-    function getData(key) {
-        return new Promise((resolve, reject) => {
-            if (!db) { reject('DB non initialisée'); return; }
-            const transaction = db.transaction([STORE_NAME], 'readonly');
-            const store = transaction.objectStore(STORE_NAME);
-            const request = store.get(key);
-            request.onsuccess = () => resolve(request.result);
-            request.onerror = () => reject(request.error);
-        });
-    }
+    const getData = key => new Promise((resolve, reject) => {
+        if (!db) return reject('DB not init');
+        const tx = db.transaction([STORE_NAME], 'readonly');
+        tx.objectStore(STORE_NAME).get(key).onsuccess = e => resolve(e.target.result);
+        tx.onerror = e => reject(e.target.error);
+    });
+    
+    const getAllDataForMonth = (year, month) => new Promise((resolve, reject) => {
+        if (!db) return reject('DB not init');
+        const tx = db.transaction([STORE_NAME], 'readonly');
+        const store = tx.objectStore(STORE_NAME);
+        const startDate = `${year}-${String(month + 1).padStart(2, '0')}-01`;
+        const endDate = `${year}-${String(month + 1).padStart(2, '0')}-${new Date(year, month + 1, 0).getDate()}`;
+        const range = IDBKeyRange.bound(startDate, endDate);
+        const request = store.getAll(range);
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+    });
 
-    function saveData(key, data) {
-        return new Promise((resolve, reject) => {
-            if (!db) { reject('DB non initialisée'); return; }
-            const transaction = db.transaction([STORE_NAME], 'readwrite');
-            const store = transaction.objectStore(STORE_NAME);
-            const request = store.put(data, key);
-            request.onsuccess = () => resolve();
-            request.onerror = () => reject(request.error);
-        });
-    }
+    const saveData = (key, data) => new Promise((resolve, reject) => {
+        if (!db) return reject('DB not init');
+        const tx = db.transaction([STORE_NAME], 'readwrite');
+        const store = tx.objectStore(STORE_NAME);
+        store.put({ date: key, ...data }).onsuccess = resolve;
+        tx.onerror = e => reject(e.target.error);
+    });
 
-    // Gestion des semaines
-    function setCurrentWeek() {
-        const today = new Date();
-        currentWeekStart = getWeekStart(today);
-        updateWeekIndicator();
-    }
-
-    function getWeekStart(date) {
-        const d = new Date(date);
-        const day = d.getDay();
-        const diff = day === 0 ? -6 : 1 - day; // Lundi comme premier jour
-        d.setDate(d.getDate() + diff);
-        d.setHours(0, 0, 0, 0);
-        return d;
-    }
-
-    function changeWeek(direction) {
-        currentWeekStart.setDate(currentWeekStart.getDate() + (direction * 7));
-        renderWeekdays();
-        updateWeekIndicator();
-        
-        // Sélectionner le même jour de la semaine dans la nouvelle semaine
-        const selectedDayIndex = selectedDate.getDay() === 0 ? 6 : selectedDate.getDay() - 1;
-        const newSelectedDate = new Date(currentWeekStart);
-        newSelectedDate.setDate(currentWeekStart.getDate() + selectedDayIndex);
-        selectDay(newSelectedDate);
-    }
-
-    function updateWeekIndicator() {
-        const today = new Date();
-        const todayWeekStart = getWeekStart(today);
-        
-        if (currentWeekStart.getTime() === todayWeekStart.getTime()) {
-            weekIndicator.textContent = 'Cette semaine';
+    // --- View Management ---
+    function toggleView() {
+        currentView = currentView === 'habits' ? 'stats' : 'habits';
+        if (currentView === 'stats') {
+            calendarMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);
+            renderStatsView();
+            mainContent.classList.remove('active');
+            statsView.classList.add('active');
+            toggleViewBtn.textContent = '🏠';
         } else {
-            const weekEnd = new Date(currentWeekStart);
-            weekEnd.setDate(currentWeekStart.getDate() + 6);
-            
-            const startDay = currentWeekStart.getDate();
-            const endDay = weekEnd.getDate();
-            const startMonth = currentWeekStart.getMonth();
-            const endMonth = weekEnd.getMonth();
-            
-            if (startMonth === endMonth) {
-                weekIndicator.textContent = `${startDay}-${endDay} ${monthNames[startMonth]}`;
-            } else {
-                weekIndicator.textContent = `${startDay} ${monthNames[startMonth]} - ${endDay} ${monthNames[endMonth]}`;
-            }
+            mainContent.classList.add('active');
+            statsView.classList.remove('active');
+            toggleViewBtn.textContent = '📊';
         }
     }
 
-    // Rendu de l'interface
-    function renderWeekdays() {
-        daysContainer.innerHTML = '';
-        
-        for (let i = 0; i < 7; i++) {
-            const date = new Date(currentWeekStart);
-            date.setDate(currentWeekStart.getDate() + i);
-            const dayKey = getDayKey(date);
-
-            const dayBtn = document.createElement('button');
-            dayBtn.className = 'day-btn';
-            dayBtn.dataset.dayIndex = i;
-            dayBtn.dataset.dayKey = dayKey;
-            
-            dayBtn.innerHTML = `
-                <span class="day-name">${dayNames[i].short}</span>
-                <span class="day-number">${date.getDate()}</span>
-            `;
-            
-            dayBtn.addEventListener('click', () => selectDay(date));
-            daysContainer.appendChild(dayBtn);
-        }
-        
-        // Marquer les jours complétés
-        updateDayCompletionStatus();
-    }
-
-    async function updateDayCompletionStatus() {
-        const dayBtns = document.querySelectorAll('.day-btn');
-        
-        for (let btn of dayBtns) {
-            const dayKey = btn.dataset.dayKey;
-            const data = await getData(dayKey);
-            
-            let isCompleted = false;
-            if (data) {
-                const completedCount = habitsConfig.filter(habit => {
-                    if (habit.type === 'checkbox') {
-                        return data[habit.id] === true;
-                    } else if (habit.type === 'radio') {
-                        return data[habit.id] > 0;
-                    }
-                    return false;
-                }).length;
-                
-                isCompleted = completedCount === habitsConfig.length;
-            }
-            
-            btn.classList.toggle('completed', isCompleted);
-        }
-    }
-
-    function renderHabitUI() {
-        habitsContainer.innerHTML = '';
-        
-        habitsConfig.forEach((habit, index) => {
-            const card = document.createElement('div');
-            card.className = 'habit-card';
-            card.dataset.habit = habit.id;
-            card.style.animationDelay = `${(index + 1) * 0.1}s`;
-
-            let controlHtml = '';
-            if (habit.type === 'checkbox') {
-                controlHtml = `
-                    <label class="custom-checkbox">
-                        <input type="checkbox" id="${habit.id}-checkbox" data-habit="${habit.id}">
-                        <span class="custom-checkmark"></span>
-                        <div class="confetti-effect"></div>
-                    </label>
-                `;
-            } else if (habit.type === 'radio') {
-                const optionsHtml = habit.options.map(opt => `
-                    <input type="radio" id="${habit.id}-${opt}" name="${habit.id}" value="${opt}" data-habit="${habit.id}">
-                    <label for="${habit.id}-${opt}">${opt === 0 ? '0' : opt}</label>
-                `).join('');
-                controlHtml = `<div class="pushup-selector">${optionsHtml}</div>`;
-            }
-
-            const subtitle = habit.isWeekly ? 
-                `<span class="habit-subtitle weekly-goal">Objectif hebdomadaire</span>` :
-                `<span class="habit-subtitle">${habit.subtitle}</span>`;
-
-            card.innerHTML = `
-                <div class="habit-info">
-                    <div class="habit-icon">${habit.emoji}</div>
-                    <div class="habit-details">
-                        <h2 class="habit-title">${habit.name}</h2>
-                        ${subtitle}
-                        <div class="progress-info">
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" id="progress-${habit.id}"></div>
-                            </div>
-                            <span class="progress-text" id="progress-text-${habit.id}">0/7</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="habit-control">
-                    ${controlHtml}
-                </div>
-            `;
-            
-            habitsContainer.appendChild(card);
-        });
-        
-        // Attacher les événements
-        habitsContainer.addEventListener('change', handleHabitChange);
-    }
-
-    async function selectDay(date) {
-        selectedDate = new Date(date);
-        selectedDateKey = getDayKey(selectedDate);
-        
-        // Mettre à jour les boutons de jour
-        document.querySelectorAll('.day-btn').forEach(btn => {
-            btn.classList.remove('active');
-        });
-        
-        const activeBtn = document.querySelector(`[data-day-key="${selectedDateKey}"]`);
-        if (activeBtn) {
-            activeBtn.classList.add('active');
-        }
-
-        // Mettre à jour l'affichage de la date
-        updateDateDisplay();
-        
-        // Charger les données
-        const dayData = await getData(selectedDateKey);
-        updateUIFromData(dayData);
-        await updateWeeklyProgress();
-        await updateGlobalProgress();
-    }
-
-    function updateDateDisplay() {
-        const today = new Date();
-        const dayIndex = selectedDate.getDay() === 0 ? 6 : selectedDate.getDay() - 1;
-        
-        let dayText = '';
-        if (getDayKey(today) === selectedDateKey) {
-            dayText = "Aujourd'hui";
-        } else {
-            const tomorrow = new Date(today);
-            tomorrow.setDate(today.getDate() + 1);
-            const yesterday = new Date(today);
-            yesterday.setDate(today.getDate() - 1);
-            
-            if (getDayKey(tomorrow) === selectedDateKey) {
-                dayText = "Demain";
-            } else if (getDayKey(yesterday) === selectedDateKey) {
-                dayText = "Hier";
-            } else {
-                dayText = dayNames[dayIndex].long;
-            }
-        }
-        
-        currentDayNameDisplay.textContent = dayText;
-        
-        const dateStr = `${dayNames[dayIndex].full} ${selectedDate.getDate()} ${monthNames[selectedDate.getMonth()]} ${selectedDate.getFullYear()}`;
-        currentDateDisplay.textContent = dateStr;
-    }
-
-    function updateUIFromData(data) {
-        habitsConfig.forEach(habit => {
-            const value = data ? data[habit.id] : null;
-            
-            if (habit.type === 'checkbox') {
-                const checkbox = document.getElementById(`${habit.id}-checkbox`);
-                if (checkbox) checkbox.checked = value || false;
-            } else if (habit.type === 'radio') {
-                habit.options.forEach(opt => {
-                    const radio = document.getElementById(`${habit.id}-${opt}`);
-                    if (radio) radio.checked = (parseInt(value, 10) === opt);
-                });
-            }
-            
-            // Mettre à jour l'apparence de la carte
-            const card = document.querySelector(`[data-habit="${habit.id}"]`);
-            if (card) {
-                const isCompleted = habit.type === 'checkbox' ? 
-                    (value === true) : 
-                    (value > 0);
-                card.classList.toggle('completed', isCompleted);
-            }
-        });
-    }
-
-    // Logique métier
-    async function handleHabitChange(event) {
-        const target = event.target;
-        const habitId = target.dataset.habit;
-
-        if (!habitId) return;
-
-        // Animation visuelle
-        const card = target.closest('.habit-card');
-        if (card) {
-            card.style.transform = 'scale(1.02)';
-            setTimeout(() => { card.style.transform = ''; }, 200);
-        }
-
-        // Animation confetti pour les checkboxes
-        if (target.type === 'checkbox' && target.checked) {
-            const customCheckbox = target.closest('.custom-checkbox');
-            if (customCheckbox) {
-                triggerConfetti(customCheckbox);
-            }
-        }
-        
-        await saveCurrentState();
-        await updateWeeklyProgress();
-        await updateGlobalProgress();
-        await updateDayCompletionStatus();
-    }
-
-    async function saveCurrentState() {
-        const existingData = await getData(selectedDateKey) || {};
-        const currentState = { ...existingData, date: selectedDateKey };
-
-        habitsConfig.forEach(habit => {
-            if (habit.type === 'checkbox') {
-                const checkbox = document.getElementById(`${habit.id}-checkbox`);
-                currentState[habit.id] = checkbox ? checkbox.checked : false;
-            } else if (habit.type === 'radio') {
-                const checkedRadio = document.querySelector(`input[name="${habit.id}"]:checked`);
-                currentState[habit.id] = checkedRadio ? parseInt(checkedRadio.value, 10) : 0;
-            }
-        });
-        
-        await saveData(selectedDateKey, currentState);
-    }
-
-    async function updateWeeklyProgress() {
-        const weeklyTotals = {};
-        const weeklyGoals = {};
-        
-        habitsConfig.forEach(habit => {
-            weeklyTotals[habit.id] = 0;
-            weeklyGoals[habit.id] = habit.isWeekly ? 1 : 7; // Rencontre: 1/semaine, autres: 7/semaine
-        });
-
-        // Calculer les totaux de la semaine
-        for (let i = 0; i < 7; i++) {
-            const date = new Date(currentWeekStart);
-            date.setDate(currentWeekStart.getDate() + i);
-            const dayKey = getDayKey(date);
-            const data = await getData(dayKey);
-
-            if (data) {
-                habitsConfig.forEach(habit => {
-                    if (habit.type === 'checkbox' && data[habit.id]) {
-                        weeklyTotals[habit.id]++;
-                    } else if (habit.type === 'radio' && data[habit.id] > 0) {
-                        weeklyTotals[habit.id]++;
-                    }
-                });
-            }
-        }
-        
-        // Mettre à jour l'affichage
-        habitsConfig.forEach(habit => {
-            const total = weeklyTotals[habit.id];
-            const goal = weeklyGoals[habit.id];
-            const progress = Math.min((total / goal) * 100, 100);
-            
-            const progressBar = document.getElementById(`progress-${habit.id}`);
-            const progressText = document.getElementById(`progress-text-${habit.id}`);
-            
-            if (progressBar) {
-                progressBar.style.width = `${progress}%`;
-            }
-            
-            if (progressText) {
-                if (habit.isWeekly) {
-                    progressText.textContent = total >= 1 ? '✓ Fait' : '0/1';
-                } else {
-                    progressText.textContent = `${total}/7`;
-                }
-            }
-        });
-    }
-
-    async function updateGlobalProgress() {
-        const dayData = await getData(selectedDateKey);
-        let completedHabits = 0;
-        
-        habitsConfig.forEach(habit => {
-            if (dayData) {
-                if (habit.type === 'checkbox' && dayData[habit.id]) {
-                    completedHabits++;
-                } else if (habit.type === 'radio' && dayData[habit.id] > 0) {
-                    completedHabits++;
-                }
-            }
-        });
-
-        const totalHabits = habitsConfig.length;
-        const progressPercentage = totalHabits > 0 ? (completedHabits / totalHabits) * 100 : 0;
-        
-        globalProgressBar.style.width = `${progressPercentage}%`;
-        
-        let progressMessage = '';
-        if (progressPercentage === 100) {
-            progressMessage = "🎉 Parfait ! Toutes vos habitudes sont faites !";
-        } else if (progressPercentage >= 80) {
-            progressMessage = `Super ! Plus que ${totalHabits - completedHabits} habitude(s) !`;
-        } else if (progressPercentage > 0) {
-            progressMessage = `${completedHabits}/${totalHabits} habitudes réalisées`;
-        } else {
-            progressMessage = "C'est parti pour une belle journée !";
-        }
-        
-        globalProgressText.textContent = progressMessage;
-    }
-
-    function triggerConfetti(checkboxElement) {
-        const confettiContainer = checkboxElement.querySelector('.confetti-effect');
-        if (!confettiContainer) return;
-
-        confettiContainer.innerHTML = '';
-        confettiContainer.classList.remove('active');
-        
-        // Force reflow
-        confettiContainer.offsetWidth;
-        
-        confettiContainer.classList.add('active');
-
-        const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffeaa7', '#dda0dd', '#98d8c8'];
-        
-        for (let i = 0; i < 12; i++) {
-            const piece = document.createElement('div');
-            piece.className = 'confetti-piece';
-            piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-            
-            const angle = (Math.PI * 2 * i) / 12;
-            const distance = Math.random() * 60 + 40;
-            piece.style.setProperty('--x', `${Math.cos(angle) * distance}px`);
-            piece.style.setProperty('--y', `${Math.sin(angle) * distance}px`);
-            
-            piece.style.animationDelay = `${Math.random() * 0.1}s`;
-            confettiContainer.appendChild(piece);
-        }
-    }
-
-    // Fonctions utilitaires
+    // --- Week & Day Logic ---
     function getDayKey(date) {
         const year = date.getFullYear();
         const month = (date.getMonth() + 1).toString().padStart(2, '0');
@@ -1139,7 +381,245 @@ document.addEventListener('DOMContentLoaded', () => {
         return `${year}-${month}-${day}`;
     }
 
-    // Initialiser l'application
+    function getWeekStart(d) {
+        const date = new Date(d);
+        const day = date.getDay();
+        const diff = date.getDate() - day + (day === 0 ? -6 : 1);
+        date.setHours(0,0,0,0);
+        return new Date(date.setDate(diff));
+    }
+    
+    function changeWeek(direction) {
+        currentWeekStart.setDate(currentWeekStart.getDate() + direction * 7);
+        renderWeekdays();
+        updateWeekIndicator();
+        const dayIndex = selectedDate.getDay() === 0 ? 6 : selectedDate.getDay() - 1;
+        const newSelectedDate = new Date(currentWeekStart);
+        newSelectedDate.setDate(currentWeekStart.getDate() + dayIndex);
+        selectDay(newSelectedDate);
+    }
+    
+    async function selectDay(date) {
+        selectedDate = new Date(date);
+        selectedDate.setHours(0,0,0,0);
+        
+        document.querySelectorAll('.day-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.dayKey === getDayKey(selectedDate)));
+        
+        updateDateDisplay();
+        const dayData = await getData(getDayKey(selectedDate));
+        updateUIFromData(dayData);
+        updateGlobalProgress();
+    }
+
+    // --- UI Rendering ---
+    function renderWeekdays() {
+        daysContainer.innerHTML = '';
+        for (let i = 0; i < 7; i++) {
+            const date = new Date(currentWeekStart);
+            date.setDate(currentWeekStart.getDate() + i);
+            const dayBtn = document.createElement('button');
+            dayBtn.className = 'day-btn';
+            dayBtn.dataset.dayKey = getDayKey(date);
+            dayBtn.innerHTML = `<span class="day-name">${dayNames[date.getDay()]}</span><span class="day-number">${date.getDate()}</span>`;
+            dayBtn.addEventListener('click', () => selectDay(date));
+            daysContainer.appendChild(dayBtn);
+        }
+    }
+
+    function renderHabitUI() {
+        habitsView.innerHTML = '';
+        habitsConfig.forEach((habit, index) => {
+            const card = document.createElement('div');
+            card.className = 'habit-card';
+            card.dataset.habit = habit.id;
+            card.style.animationDelay = `${index * 0.05}s`;
+
+            const subtitleClass = habit.isBonus ? 'habit-subtitle bonus' : 'habit-subtitle';
+            const subtitleText = habit.isBonus ? 'Bonus Hebdomadaire' : habit.subtitle;
+
+            let controlHtml;
+            if (habit.type === 'checkbox') {
+                controlHtml = `<label class="custom-checkbox"><input type="checkbox" data-habit="${habit.id}"><span class="custom-checkmark"></span></label>`;
+            } else {
+                controlHtml = `<div class="pushup-selector">${habit.options.map(opt => `<input type="radio" id="${habit.id}-${opt}" name="${habit.id}" value="${opt}" data-habit="${habit.id}" ${opt===0 ? 'checked':''}><label for="${habit.id}-${opt}">${opt}</label>`).join('')}</div>`;
+            }
+
+            card.innerHTML = `
+                <div class="habit-info">
+                    <div class="habit-icon">${habit.emoji}</div>
+                    <div class="habit-details">
+                        <h2 class="habit-title">${habit.name}</h2>
+                        <span class="${subtitleClass}">${subtitleText}</span>
+                    </div>
+                </div>
+                <div class="habit-control">${controlHtml}</div>`;
+            habitsView.appendChild(card);
+        });
+        habitsView.addEventListener('change', handleHabitChange);
+    }
+
+    function updateUIFromData(data) {
+        habitsConfig.forEach(habit => {
+            const value = data ? data[habit.id] : null;
+            const card = habitsView.querySelector(`[data-habit="${habit.id}"]`);
+            if (!card) return;
+            
+            let isCompleted = false;
+            if (habit.type === 'checkbox') {
+                card.querySelector(`input[type="checkbox"]`).checked = value || false;
+                isCompleted = value || false;
+            } else if (habit.type === 'radio') {
+                const val = value !== undefined && value !== null ? value : 0;
+                const radio = card.querySelector(`input[value="${val}"]`);
+                if (radio) radio.checked = true;
+                isCompleted = val > 0;
+            }
+            card.classList.toggle('completed', isCompleted);
+        });
+    }
+
+    function updateDateDisplay() {
+        const today = new Date(); today.setHours(0,0,0,0);
+        const options = { weekday: 'long', day: 'numeric', month: 'long' };
+        const fullDateString = selectedDate.toLocaleDateString('fr-FR', options);
+        const capitalizedDate = fullDateString.charAt(0).toUpperCase() + fullDateString.slice(1);
+
+        if (selectedDate.getTime() === today.getTime()) {
+             currentDayNameDisplay.textContent = "Aujourd'hui";
+             currentDayDateDisplay.textContent = capitalizedDate;
+        } else {
+             currentDayNameDisplay.textContent = capitalizedDate;
+             currentDayDateDisplay.textContent = '';
+        }
+    }
+
+    function updateWeekIndicator() {
+        const todayStart = getWeekStart(new Date());
+        if (currentWeekStart.getTime() === todayStart.getTime()) {
+            weekIndicator.textContent = 'Cette semaine';
+        } else {
+            weekIndicator.textContent = `Semaine du ${currentWeekStart.toLocaleDateString('fr-FR', {day:'numeric', month:'short'})}`;
+        }
+    }
+    
+    // --- App Logic & Progress ---
+    async function handleHabitChange(e) {
+        await saveCurrentState();
+        const dayData = await getData(getDayKey(selectedDate));
+        updateUIFromData(dayData);
+        updateGlobalProgress();
+    }
+
+    async function saveCurrentState() {
+        const dayKey = getDayKey(selectedDate);
+        const currentState = await getData(dayKey) || {};
+        habitsConfig.forEach(habit => {
+            const card = habitsView.querySelector(`[data-habit="${habit.id}"]`);
+            if (habit.type === 'checkbox') {
+                currentState[habit.id] = card.querySelector('input').checked;
+            } else if (habit.type === 'radio') {
+                currentState[habit.id] = parseInt(card.querySelector('input:checked').value);
+            }
+        });
+        await saveData(dayKey, currentState);
+    }
+
+    async function updateGlobalProgress() {
+        const dayData = await getData(getDayKey(selectedDate));
+        const dailyHabits = habitsConfig.filter(h => !h.isBonus);
+        const bonusHabit = habitsConfig.find(h => h.isBonus);
+
+        let completedDaily = 0;
+        if (dayData) {
+            dailyHabits.forEach(habit => {
+                if ((habit.type === 'checkbox' && dayData[habit.id]) || (habit.type === 'radio' && dayData[habit.id] > 0)) {
+                    completedDaily++;
+                }
+            });
+        }
+        
+        const isBonusCompleted = dayData && bonusHabit && dayData[bonusHabit.id];
+        const progress = dailyHabits.length > 0 ? (completedDaily / dailyHabits.length) * 100 : 0;
+        globalProgressBar.style.width = `${progress}%`;
+
+        if (progress === 100) {
+            globalProgressText.textContent = isBonusCompleted ? "✨ Journée parfaite + BONUS ! ✨" : "🎉 Excellent ! Objectifs quotidiens atteints !";
+        } else {
+            globalProgressText.textContent = `${completedDaily} / ${dailyHabits.length} habitudes quotidiennes`;
+        }
+    }
+
+    // --- Stats View Logic ---
+    function changeMonth(direction) {
+        calendarMonth.setMonth(calendarMonth.getMonth() + direction);
+        renderStatsView();
+    }
+
+    async function renderStatsView() {
+        monthDisplay.textContent = `${monthNames[calendarMonth.getMonth()]} ${calendarMonth.getFullYear()}`;
+        
+        const year = calendarMonth.getFullYear();
+        const month = calendarMonth.getMonth();
+        const monthData = await getAllDataForMonth(year, month);
+        
+        // --- NOUVELLE LOGIQUE POUR LA CARTE D'ACTIVITÉ ---
+        heatmapGrid.innerHTML = '';
+        const firstDay = new Date(year, month, 1);
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const startDayOfWeek = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1;
+
+        for (let i = 0; i < startDayOfWeek; i++) {
+            heatmapGrid.insertAdjacentHTML('beforeend', `<div></div>`); // Espaces vides pour commencer le mois le bon jour
+        }
+
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dayKey = getDayKey(new Date(year, month, day));
+            const dayData = monthData.find(d => d.date === dayKey);
+            
+            let iconsHTML = '';
+            let hasActivity = false;
+            let tooltipText = `🗓️ ${day}/${month+1}/${year}\n- - - - - - - - -\n`;
+            let habitsCompletedTooltip = '';
+
+            if (dayData) {
+                habitsConfig.forEach(h => {
+                    const isCompleted = (h.type === 'checkbox' && dayData[h.id]) || (h.type === 'radio' && dayData[h.id] > 0);
+                    if (isCompleted) {
+                        iconsHTML += h.emoji;
+                        habitsCompletedTooltip += `✅ ${h.name}\n`;
+                        hasActivity = true;
+                    }
+                });
+            }
+            
+            tooltipText += hasActivity ? habitsCompletedTooltip : 'Aucune habitude complétée.';
+            const dayClass = hasActivity ? '' : 'empty';
+
+            heatmapGrid.insertAdjacentHTML('beforeend', `<div class="heatmap-day ${dayClass}" data-tooltip="${tooltipText.trim()}">${iconsHTML}</div>`);
+        }
+        
+        // --- Stats List avec barres de progression ---
+        statsList.innerHTML = '';
+        habitsConfig.forEach(habit => {
+            const completedDays = monthData.filter(d => (habit.type === 'checkbox' && d[habit.id]) || (habit.type === 'radio' && d[habit.id] > 0)).length;
+            const successRate = daysInMonth > 0 ? Math.round((completedDays / daysInMonth) * 100) : 0;
+            
+            const item = document.createElement('div');
+            item.className = 'stat-item';
+            item.innerHTML = `
+                <div class="stat-item-header">
+                    <div class="stat-item-title">${habit.emoji} ${habit.name}</div>
+                    <div class="stat-item-details">${completedDays} / ${daysInMonth} jours (${successRate}%)</div>
+                </div>
+                <div class="stat-progress-bar-container">
+                    <div class="stat-progress-bar" style="width: ${successRate}%; background-color: ${habit.color};"></div>
+                </div>
+            `;
+            statsList.appendChild(item);
+        });
+    }
+    
+    // --- Start App ---
     init();
 });
 </script>
